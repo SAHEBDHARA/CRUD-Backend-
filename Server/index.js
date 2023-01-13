@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 app.use(cors());// cors does allow to request data from different server in different url.
 
-const PORT = 8000; 
+const PORT = process.env.PORT || 3000; 
 
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD; 
