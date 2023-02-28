@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 
 import Connection from './DB/db.js';
 import Route from './routes/route.js'
+import Useroute from './routes/auth.js'
 
 const app = express();
 dotenv.config();
@@ -21,7 +22,8 @@ const password = process.env.DB_PASSWORD;
 Connection(username, password);
 
 
-app.use('/', Route )
+app.use('/api', Route )
+app.use('/api/user',Useroute)
 
 //route 
 app.get('/',(req,res)=>{
@@ -31,6 +33,3 @@ app.get('/',(req,res)=>{
 
 app.listen(PORT, ()=>console.log(`The server is running on port ${PORT}` ))
 
-// pass - crudapp123
-// uname - crudapp
-//mongodb+srv://crudapp:<password>@cluster0.zpcyskd.mongodb.net/?retryWrites=true&w=majority
