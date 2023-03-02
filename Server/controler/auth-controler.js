@@ -66,7 +66,7 @@ export const resisterUser = async (req,res)=>{
 
 
 
-    if(!email || !password || !name){
+    if(!email || !password || !name ){
       
       return res.status(409).json({ message: 'all must be filed' });
 
